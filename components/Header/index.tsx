@@ -5,8 +5,9 @@ import Image from "next/image";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import MenuSvg from "../svg/MenuSvg";
 import { HamburgerMenu } from "../design/Header";
-import { Button } from "../Button";
+// import { Button } from "../Button";
 import NavLink from "../NavLink";
+import { Button } from "..";
 
 export const navigation = [
   {
@@ -106,28 +107,31 @@ export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
         </nav>
 
         <div className="lg:flex hidden items-center gap-8">
-          <Link
+          {/* <Link
             href="#signup"
             className="button text-n-1/50 transition-colors hover:text-n-1"
           >
             New account
-          </Link>
+          </Link> */}
 
-          {/* <NavLink label="New account" url="#login" /> */}
+          <NavLink label="New account" url="#login" />
 
           <Button as="a" href="#login">
             Sign in
           </Button>
         </div>
 
-        <Button
+        {/* <Button className="ml-auto lg:hidden" as="a">Hello</Button> */}
+        <Button as="a" href={"/"}>Hello</Button>
+
+        {/* <Button
           as="a"
           className="ml-auto lg:hidden"
           px="px-3"
-          onClick={toggleNavigation}
+
         >
           <MenuSvg openNavigation={openNavigation} />
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

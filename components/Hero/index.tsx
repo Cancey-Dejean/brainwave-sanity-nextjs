@@ -9,8 +9,9 @@ import Generating from "../Generating";
 import Notification from "../Notification";
 import CompanyLogos from "../CompanyLogos";
 import Image from "next/image";
+import { Button } from "..";
 // @ts-ignore
-import { Button } from "coding-noir-brainwave";
+// import { Button } from "coding-noir-brainwave";
 
 const heroIcons = [
   {
@@ -119,7 +120,7 @@ const Hero = ({
               "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, dolore."}
           </p>
 
-          <Button label={btnText || "Link"} href={btnLink} white />
+          <Button as="a" href={btnLink} white>Hello</Button>
         </div>
 
         <div className="relative mx-auto max-w-[23rem] md:max-w-5xl xl:mb-24">
@@ -139,7 +140,7 @@ const Hero = ({
                   alt="AI"
                 />
 
-                <Generating className="absolute bottom-5 left-4 right-4 md:bottom-8 md:left-1/2 md:right-auto md:w-[31rem] md:-translate-x-1/2" />
+                <Generating text="Hello" className="absolute bottom-5 left-4 right-4 md:bottom-8 md:left-1/2 md:right-auto md:w-[31rem] md:-translate-x-1/2" />
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="absolute -left-[5.5rem] bottom-[7.5rem] hidden rounded-2xl border border-n-1/10 bg-n-9/40 px-1 py-1 backdrop-blur xl:flex">

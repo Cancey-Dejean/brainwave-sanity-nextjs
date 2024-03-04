@@ -9,8 +9,11 @@ import Collaboration from "./Collaboration";
 import Services from "./Services";
 import Pricing from "./Pricing";
 import Roadmap from "./Roadmap";
+import CheckTextRow from "./CheckTextRow";
 import PricingList from "./PricingList";
 import GradientCard from "./GradientCard";
+import PricingCard from "./PricingList/PricingCard";
+import RoadmapCard from "./Roadmap/RoadmapCard";
 import ServiceCard1 from "./Services/ServiceCard1";
 import ServiceCard2 from "./Services/ServiceCard2";
 import ServiceCardLarge from "./Services/ServiceCardLarge";
@@ -23,6 +26,7 @@ export {
   Hero,
   Benefits,
   Heading,
+  CheckTextRow,
   Section,
   Collaboration,
   Services,
@@ -31,6 +35,8 @@ export {
   PricingList,
   Footer,
   GradientCard,
+  RoadmapCard,
+  PricingCard,
   ServiceCard1,
   ServiceCard2,
   ServiceCardLarge,

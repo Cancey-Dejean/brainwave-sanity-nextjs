@@ -1,8 +1,6 @@
-import React from "react";
-// import Section from "./Section";
-// import { socials } from "../../constants";
 import { Section } from "../../components";
 import Link from "next/link";
+import Image from "next/image";
 
 export const socials = [
   {
@@ -53,7 +51,7 @@ const Footer = () => {
               target="_blank"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-n-7 transition-colors hover:bg-n-6"
             >
-              <img src={item.iconUrl} width={16} height={16} alt={item.title} />
+              <Image src={item.iconUrl} width={16} height={16} alt={item.title} />
             </Link>
           ))}
         </ul>

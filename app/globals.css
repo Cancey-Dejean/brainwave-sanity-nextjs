@@ -19,7 +19,7 @@
 
 @layer base {
   body {
-    @apply flex h-screen flex-col bg-n-8 font-sans text-base text-n-1;
+    @apply flex h-screen w-full flex-col bg-n-8 font-sans text-base text-n-1;
   }
 
   a {
