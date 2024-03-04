@@ -9,6 +9,8 @@ const meta = {
   },
   tags: ["autodocs"],
   args: {
+    title: "string",
+    description: "string",
   },
   argTypes: {
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ChatBubbleWing from "../svg/ChatBubbleWing";
 
 export const Gradient = () => {
@@ -14,21 +15,21 @@ export const Gradient = () => {
   );
 };
 
-export const PhotoChatMessage = () => {
+export const PhotoChatMessage = ({text}: {text: string}) => {
   return (
     <div className="absolute right-8 top-8 max-w-[17.5rem] rounded-t-xl rounded-bl-xl bg-black px-8 py-6 font-code text-base lg:right-[8.75rem] lg:top-16 lg:max-w-[17.5rem]">
-      Hey Brainwave, enhance this photo
+      {text || "Photo generated!"}
       <ChatBubbleWing className="absolute bottom-0 left-full" />
     </div>
   );
 };
 
-export const VideoChatMessage = () => {
+export const VideoChatMessage = ({text}: {text: string}) => {
   return (
     <div className="absolute left-[3.125rem] top-8 w-full max-w-[14rem] rounded-t-xl rounded-br-xl bg-n-6 pb-7 pl-5 pr-2.5 pt-2.5 font-code text-base md:max-w-[17.5rem]">
-      Video generated!
+      {text || "Text"}
       <div className="absolute -bottom-[1.125rem] left-5 flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.75rem] bg-color-1">
-        <img
+        <Image
           src={"/images/brainwave-symbol-white.svg"}
           width={26}
           height={26}

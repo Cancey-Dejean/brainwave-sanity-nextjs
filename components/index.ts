@@ -11,6 +11,8 @@ import Pricing from "./Pricing";
 import Roadmap from "./Roadmap";
 import PricingList from "./PricingList";
 import GradientCard from "./GradientCard";
+import ServiceCard1 from "./Services/ServiceCard1";
+import ServiceCard2 from "./Services/ServiceCard2";
 import ServiceCardLarge from "./Services/ServiceCardLarge";
 import Footer from "./Footer";
 
@@ -29,5 +31,7 @@ export {
   PricingList,
   Footer,
   GradientCard,
+  ServiceCard1,
+  ServiceCard2,
   ServiceCardLarge,
 };

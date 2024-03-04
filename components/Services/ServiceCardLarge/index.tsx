@@ -29,13 +29,13 @@ export default function ServiceCardLarge({mainImage, mainImageAlt, title, descri
   return (
     <div className="relative z-1 mb-5 flex h-[39rem] items-center overflow-hidden rounded-3xl border border-n-1/10 p-8 lg:p-20 xl:h-[46rem] max-w-[1280px] mx-auto w-full">
         <div className="pointer-events-none absolute left-0 top-0 h-full w-full md:w-3/5 xl:w-auto">
-            <Image
+          <Image
             className="h-full w-full object-cover md:object-right"
             width={800}
             alt={mainImageAlt || "Alt Text"}
             height={730}
             src={ mainImage || "/images/services/service-1.png"}
-            />
+          />
         </div>
 
         <div className="relative z-1 ml-auto max-w-[17rem]">
