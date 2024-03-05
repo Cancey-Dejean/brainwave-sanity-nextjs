@@ -1,9 +1,9 @@
 import { Rule } from "sanity";
 
-export default {
-  name: "globals",
+export const header = {
+  name: "headers",
   type: "document",
-  title: "Globals",
+  title: "Headers",
   fields: [
     {
       name: "title",
@@ -23,7 +23,7 @@ export default {
       title: "Menu",
       validation: (Rule: Rule) => [
         Rule.required().min(3).error('A minimum of 3 items is required'),
-        Rule.max(4).error('A maxiumum of 4 links is recommended'),
+        Rule.max(6).error('A maxiumum of 6 links is recommended'),
       ],
       of: [
         {
@@ -36,27 +36,17 @@ export default {
       name: "ctaFields",
       type: "array",
       title: "CTA Fields",
-      validation: (Rule: Rule) => Rule.max(1).error('A maxiumum of 2 CTA Link Types is recommended'),
+      validation: (Rule: Rule) => Rule.max(2).error('A maxiumum of 2 CTA Link Types is recommended'),
       of: [
         {
           name: "navLink",
           type: "navLink",
         },
+        {
+          name: "button",
+          type: "button",
+        },
       ],
     },
-
-
-    // {
-    //   name: "sections",
-    //   type: "array",
-    //   title: "Sections",
-    //   of: [
-    //     {
-    //       name: "header",
-    //       type: "header",
-    //       limit: 1,
-    //     },
-    //   ],
-    // },
   ],
 };

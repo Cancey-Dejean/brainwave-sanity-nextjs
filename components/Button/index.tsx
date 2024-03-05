@@ -3,7 +3,7 @@ import ButtonGradient from "../Button/ButtonGradient";
 export type ButtonProps = {
   as: "a" | "button";
   className?: string;
-  onClick?: () => void;
+  // onClick?: () => void;
   children?: React.ReactNode;
   px?: string;
   white?: boolean;
@@ -14,7 +14,7 @@ export type ButtonProps = {
 export const Button = ({
   as,
   className,
-  onClick,
+  // onClick,
   children,
   href,
   px,
@@ -28,7 +28,7 @@ export const Button = ({
   const spanClasses = "relative z-10";
 
   return (
-    <Element className={classes} {...rest} onClick={onClick}>
+    <Element className={classes} {...rest}>
       <span className={spanClasses}>{children || "Button"}</span>
       {ButtonSvg({ white: white })}
     </Element>

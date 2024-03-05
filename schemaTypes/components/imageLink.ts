@@ -1,7 +1,7 @@
-export const navLink = {
-  name: "navLink",
+export const imageLink = {
+  name: "imageLink",
   type: "object",
-  title: "NavLink",
+  title: "Image Link",
   fields: [
     {
       name: "title",
@@ -9,14 +9,14 @@ export const navLink = {
       type: "string",
     },
     {
+      name: "iconUrl",
+      title: "Icon",
+      type: "image",
+    },
+    {
       name: "url",
       title: "Url",
       type: "string",
-    },
-    {
-      name: "onlyMobile",
-      title: "Only Mobile",
-      type: "boolean",
     },
   ],
 

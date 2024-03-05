@@ -1,33 +1,45 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import MenuSvg from "../svg/MenuSvg";
-import { HamburgerMenu } from "../design/Header";
-import NavLink from "../NavLink";
-import { Button } from "..";
+import { client } from "@/libs/sanity";
+import HeaderContent from "./HeaderContent";
+
+async function getData() {
+  const query = `* [_type == "headers"] {
+    _type,
+    title,
+    menu,
+    "logoImage": logo.asset->url,
+    ctaFields [_type == "navLink" || _type == "button"]
+    }
+  `;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
 
 export const navigation = [
   {
     id: "0",
     label: "Features",
     url: "#features",
+    onlyMobile: false,
   },
   {
     id: "1",
     label: "Pricing",
     url: "#pricing",
+    onlyMobile: false,
   },
   {
     id: "2",
     label: "How to use",
     url: "#how-to-use",
+    onlyMobile: false,
   },
   {
     id: "3",
     label: "Roadmap",
     url: "#roadmap",
+    onlyMobile: false,
   },
   {
     id: "4",
@@ -43,83 +55,32 @@ export const navigation = [
   },
 ];
 
-type HeaderProps = {
+type Item = {
+  _key: string;
+  title: string;
+  url: string;
+  onlyMobile: boolean;
+}
+
+export type HeaderProps = {
   logoImage?: string;
   logoAlt?: string;
   logoText?: string;
+  ctaLinkText?: string;
+  ctaLinkUrl?: string;
+  ctaButtonText: string;
+  ctaButtonUrl: string;
+  menu: Item[]
 };
 
-export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
-  const [openNavigation, setOpenNavigation] = useState(false);
+export default async function Header({}: HeaderProps) {
 
-  const toggleNavigation = () => {
-    if (openNavigation) {
-      setOpenNavigation(false);
-      enablePageScroll();
-    } else {
-      setOpenNavigation(true);
-      disablePageScroll();
-    }
-  };
 
-  const handleClick = () => {
-    if (!openNavigation) return;
-
-    enablePageScroll();
-    setOpenNavigation(false);
-  };
+  const headers = await getData();
+  const header: any = headers[0];
+  console.log(header);
 
   return (
-    <div
-      className={`sticky left-0 top-0 z-50 w-full  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${
-        openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
-      }`}
-    >
-      <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
-        <Link className="w-[12rem] xl:mr-8" href="#hero">
-          {logoImage ? (
-            <Image
-            src={logoImage || "/images/brainwave.svg"}
-            width={190}
-            height={40}
-            alt={logoAlt || "Brainwave"}
-          />
-          ) : (
-            <p>{logoText || "Brainwave"}</p>
-          )}
-        </Link>
-
-        <nav
-          className={`${
-            openNavigation ? "flex" : "hidden"
-          } fixed bottom-0 left-0 right-0 top-[5rem] bg-n-8 lg:static lg:mx-auto lg:flex lg:bg-transparent`}
-        >
-          <div className="relative z-2 m-auto flex flex-col items-center justify-center gap-6 lg:flex-row">
-            {navigation.map((item) => (
-              <NavLink label={item.label} url={item.url} key={item.id} onlyMobile={item.onlyMobile} handleClick={handleClick} />
-            ))}
-          </div>
-
-          <HamburgerMenu />
-        </nav>
-
-        <div className="lg:flex hidden items-center gap-8">
-          <NavLink label="New account" url="#login" />
-
-          <Button as="a" href="#login">
-            Sign in
-          </Button>
-        </div>
-
-        <Button
-          as="button"
-          className="ml-auto lg:hidden"
-          px="px-3"
-          onClick={toggleNavigation}
-        >
-          <MenuSvg openNavigation={openNavigation} />
-        </Button>
-      </div>
-    </div>
+   <HeaderContent logoImage={header.logoImage} menu={header.menu}  ctaLinkText={header.ctaFields[0].title} ctaLinkUrl={header.ctaFields[0].url} ctaButtonText={header.ctaFields[1].label} ctaButtonUrl={header.ctaFields[1].href} />
   );
 }

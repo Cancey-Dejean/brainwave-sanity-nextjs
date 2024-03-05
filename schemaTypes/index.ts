@@ -5,9 +5,12 @@ import { collaboration } from "./sections/collaboration";
 import { services } from "./sections/services";
 import { pricing } from "./sections/pricing";
 import { roadmap } from "./sections/roadmap";
-import global from "./globals/global";
-import { header } from "./sections/header";
+import siteSettings from "./globals/siteSettings";
+import { header } from "./globals/header";
+import { footer } from "./globals/footer";
 import { navLink } from "./components/navLink";
+import { button } from "./components/button";
+import { imageLink } from "./components/imageLink";
 
 export const schemaTypes = [
   page,
@@ -17,7 +20,10 @@ export const schemaTypes = [
   services,
   pricing,
   roadmap,
-  global,
+  siteSettings,
+  button,
   header,
-  navLink
+  footer,
+  navLink,
+  imageLink,
 ];
