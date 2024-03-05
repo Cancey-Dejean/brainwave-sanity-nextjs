@@ -121,17 +121,14 @@ export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
           </Button>
         </div>
 
-        {/* <Button className="ml-auto lg:hidden" as="a">Hello</Button> */}
-        <Button as="a" href={"/"}>Hello</Button>
-
-        {/* <Button
-          as="a"
+        <Button
+          as="button"
           className="ml-auto lg:hidden"
           px="px-3"
-
+          onClick={toggleNavigation}
         >
           <MenuSvg openNavigation={openNavigation} />
-        </Button> */}
+        </Button>
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ export const Button = ({
   const spanClasses = "relative z-10";
 
   return (
-    <Element className={classes} {...rest}>
+    <Element className={classes} {...rest} onClick={onClick}>
       <span className={spanClasses}>{children || "Button"}</span>
       {ButtonSvg({ white: white })}
     </Element>
@@ -38,8 +38,6 @@ export const Button = ({
 const ButtonSvg = ({ white = false }: { white: boolean }) => {
   return (
     <>
-      <ButtonGradient />
-
       {/* White */}
       <svg
         className="absolute left-0 top-0"
