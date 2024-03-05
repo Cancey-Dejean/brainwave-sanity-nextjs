@@ -5,7 +5,6 @@ import Image from "next/image";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import MenuSvg from "../svg/MenuSvg";
 import { HamburgerMenu } from "../design/Header";
-// import { Button } from "../Button";
 import NavLink from "../NavLink";
 import { Button } from "..";
 
@@ -68,7 +67,6 @@ export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
 
     enablePageScroll();
     setOpenNavigation(false);
-    alert("You clicked a link!");
   };
 
   return (
@@ -89,7 +87,6 @@ export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
           ) : (
             <p>{logoText || "Brainwave"}</p>
           )}
-
         </Link>
 
         <nav
@@ -107,13 +104,6 @@ export default function Header({logoImage, logoAlt, logoText}: HeaderProps) {
         </nav>
 
         <div className="lg:flex hidden items-center gap-8">
-          {/* <Link
-            href="#signup"
-            className="button text-n-1/50 transition-colors hover:text-n-1"
-          >
-            New account
-          </Link> */}
-
           <NavLink label="New account" url="#login" />
 
           <Button as="a" href="#login">

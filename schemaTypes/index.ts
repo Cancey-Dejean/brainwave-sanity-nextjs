@@ -5,6 +5,9 @@ import { collaboration } from "./sections/collaboration";
 import { services } from "./sections/services";
 import { pricing } from "./sections/pricing";
 import { roadmap } from "./sections/roadmap";
+import global from "./globals/global";
+import { header } from "./sections/header";
+import { navLink } from "./components/navLink";
 
 export const schemaTypes = [
   page,
@@ -14,4 +17,7 @@ export const schemaTypes = [
   services,
   pricing,
   roadmap,
+  global,
+  header,
+  navLink
 ];

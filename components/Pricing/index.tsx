@@ -107,11 +107,13 @@ const Pricing = ({tag, title, linkText, linkUrl, mainImage,  mainImageAlt}: Pric
         <div className="relative">
           <PricingList>
             {pricing.map((item) => (
+              <>
               <PricingCard price={item.price} title={item.title} key={item.id} description={item.description}>
                 {item.features.map((feature) => (
-                  <CheckTextRow text={feature.text} />
+                  <CheckTextRow text={feature.text} key={feature.id} />
                 ))}
               </PricingCard>
+              </>
             ))}
           </PricingList>
 

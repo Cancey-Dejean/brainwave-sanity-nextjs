@@ -182,10 +182,10 @@ const Hero = ({
           <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
 
-        <CompanyLogos
-          companyLogos={companyLogos}
-          className="relative z-10 mt-20 hidden lg:block"
-        />
+        {companyLogos && (
+          <CompanyLogos companyLogos={companyLogos} className="relative z-10 mt-20 hidden lg:block" />
+        )}
+
       </div>
 
       <BottomLine />
