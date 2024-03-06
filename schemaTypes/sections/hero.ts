@@ -9,9 +9,24 @@ export const hero = {
       type: "string",
     },
     {
+      name: "titleHighlight",
+      title: "Title Highlight",
+      type: "string",
+    },
+    {
       name: "description",
       title: "Description",
       type: "text",
+    },
+    {
+      name: "btnText",
+      title: "Button Text",
+      type: "string",
+    },
+    {
+      name: "btnLink",
+      title: "Button Link",
+      type: "string",
     },
     {
       name: "mainImage",
@@ -24,6 +39,11 @@ export const hero = {
           title: "Alternative text",
         },
       ],
+    },
+    {
+      name: "imageText",
+      title: "Image Text",
+      type: "string",
     },
   ],
 };

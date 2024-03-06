@@ -52,14 +52,12 @@ async function getData() {
   return data;
 }
 
-
 type Item = {
   _key?: string;
   title?: string;
   url?: string;
   iconUrl?: string;
 }
-
 
 export type FooterProps = {
   socials?: Item[];
@@ -71,7 +69,8 @@ export default async function Footer({}: FooterProps) {
   console.log(footer[0].socialLinks);
 
   return (
-    <Section crosses className="!px-0 !py-10">
+    <footer className="mt-auto">
+      <Section crosses className="!px-0 !py-10">
       <div className="container flex items-center justify-center gap-10 max-sm:flex-col sm:justify-between">
         <p className="caption text-n-4 lg:block">
           © {new Date().getFullYear()}. All rights reserved.
@@ -91,5 +90,6 @@ export default async function Footer({}: FooterProps) {
         </ul>
       </div>
     </Section>
+    </footer>
   );
 };

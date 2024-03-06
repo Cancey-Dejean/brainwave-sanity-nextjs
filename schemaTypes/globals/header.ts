@@ -15,6 +15,13 @@ export const header = {
       name: "logo",
       type: "image",
       title: "Logo",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+        },
+      ],
       validation: (Rule: Rule) => Rule.required(),
     },
     {

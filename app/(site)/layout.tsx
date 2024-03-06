@@ -23,12 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>
+        <div className="flex h-screen flex-col">
           <Header />
-          <main className="flex flex-1 flex-col pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">
+          <main className="flex flex-col pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">
             {children}
           </main>
           <Footer />
+
           <ButtonGradient />
         </div>
       </body>

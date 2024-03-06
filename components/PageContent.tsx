@@ -10,17 +10,17 @@ import {
 export const PageContent = (section: any) => {
   switch (section._type) {
     case "hero":
-      return <Hero />;
+      return <Hero key={section._key} {...section}  />;
     case "benefits":
-      return <Benefits />;
+      return <Benefits key={section._key} {...section} />;
     case "collaboration":
-      return <Collaboration />;
+      return <Collaboration key={section._key} {...section} />;
     case "services":
-      return <Services />;
+      return <Services key={section._key} {...section} />;
     case "pricing":
-      return <Pricing />;
+      return <Pricing key={section._key} {...section} />;
     case "roadmap":
-      return <Roadmap />;
+      return <Roadmap key={section._key} {...section} />;
     default:
       return <div><h1>Add Section to page in Sanity CMS</h1></div>;
   }

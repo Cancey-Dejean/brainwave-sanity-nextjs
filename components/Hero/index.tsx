@@ -1,17 +1,14 @@
 "use client";
-// import Button, { ButtonProps } from "../Button";
+import { useRef } from "react";
 import Section from "../Section";
 import { BackgroundCircles, BottomLine, Gradient } from "../design/Hero";
-// import { heroIcons } from "../../constants";
 import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
 import Generating from "../Generating";
 import Notification from "../Notification";
 import CompanyLogos from "../CompanyLogos";
 import Image from "next/image";
 import { Button } from "..";
-// @ts-ignore
-// import { Button } from "coding-noir-brainwave";
+import { urlFor } from "@/libs/sanity";
 
 const heroIcons = [
   {
@@ -98,12 +95,12 @@ const Hero = ({
     >
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 mx-auto mb-[3.875rem] flex max-w-[62rem] flex-col items-center justify-center text-center md:mb-20 lg:mb-[6.25rem]">
-          <h1 className="h1 mb-6 flex gap-4">
+          <h1 className="h1 mb-6">
             {title || "Section Title"}
 
             {titleHighlight && (
-              <span className="relative inline-block">
-                {titleHighlight}{" "}
+              <span className="relative ml-4 inline-block">
+                {titleHighlight}
                 <Image
                   src="/images/hero/curve.png"
                   className="absolute left-0 top-full w-full xl:-mt-2"
@@ -120,7 +117,7 @@ const Hero = ({
               "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, dolore."}
           </p>
 
-          <Button as="a" href={btnLink} white>Hello</Button>
+          <Button as="a" href={btnLink} white>{btnText}</Button>
         </div>
 
         <div className="relative mx-auto max-w-[23rem] md:max-w-5xl xl:mb-24">
@@ -130,13 +127,11 @@ const Hero = ({
 
               <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
                 <Image
-                  src={
-                    mainImage ||
-                    "https://dummyimage.com/1024x510.png/ac6aff/ffffff"
-                  }
+                  src={urlFor(mainImage).url() || "https://dummyimage.com/1024x1512.png/ac6aff/ffffff"}
+
                   className="h-full w-full translate-y-[8%] scale-[1.7] md:-translate-y-[10%] md:scale-[1] lg:-translate-y-[23%]"
-                  width={1024}
-                  height={490}
+                  width={1034}
+                  height={1512}
                   alt="AI"
                 />
 
@@ -169,6 +164,7 @@ const Hero = ({
 
             <Gradient />
           </div>
+
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <Image
               src={"/images/hero/hero-background.jpg"}

@@ -68,9 +68,9 @@ export type HeaderProps = {
   logoText?: string;
   ctaLinkText?: string;
   ctaLinkUrl?: string;
-  ctaButtonText: string;
-  ctaButtonUrl: string;
-  menu: Item[]
+  ctaButtonText?: string;
+  ctaButtonUrl?: string;
+  menu?: Item[]
 };
 
 export default async function Header({}: HeaderProps) {

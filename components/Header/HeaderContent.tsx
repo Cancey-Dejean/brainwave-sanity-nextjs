@@ -1,9 +1,9 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Button, NavLink } from "..";
 import { HeaderProps } from ".";
-import { useState } from "react";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import { HamburgerMenu } from "../design/Header";
 import { MenuSvg } from "../svg";
