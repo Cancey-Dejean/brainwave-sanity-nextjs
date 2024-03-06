@@ -5,7 +5,18 @@ import { PageContent } from "../../components/PageContent";
 
 async function getData() {
   const query = `* [slug.current == "/"][0] {
-    sections[]
+    sections[] {
+      _type == "hero" => {
+        ...,
+        "mainImage": mainImage.asset->url,
+        socialProof [] {
+           _key,
+           title,
+           "iconUrl": iconUrl.asset->url,
+           url
+        },
+      },
+    }
   }`;
 
   const data = await client.fetch(query);
@@ -16,7 +27,8 @@ async function getData() {
 export default async function Home() {
   const pages = await getData();
   const sections: any = pages.sections;
-  console.log(sections);
+  console.log(sections[0].socialProof[0].title);
+
 
   return <>{sections.map(PageContent)}</>;
 }

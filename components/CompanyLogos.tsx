@@ -1,30 +1,28 @@
+import { urlFor } from "@/libs/sanity";
 import Image from "next/image";
+import Link from "next/link";
 
-type Logos = {
-  image: string;
-  alt: string;
-};
+// type Logo = {
+//   image: string;
+//   alt: string;
+//   url?: string;
+// };
 
-type CompanyLogosProps = {
+export type CompanyLogosProps = {
   className?: string;
-  companyLogos: Logos[];
+  text?: string;
+  // companyLogos: Logo[];
+  children?: React.ReactNode;
 };
 
-const CompanyLogos = ({ className, companyLogos }: CompanyLogosProps) => {
+const CompanyLogos = ({ className, children, text }: CompanyLogosProps) => {
   return (
     <div className={className}>
       <h5 className="tagline mb-6 text-center text-n-1/50">
-        Helping people create beautiful content at
+        {text || "Trusted by"}
       </h5>
       <ul className="flex">
-        {companyLogos.map((logo, index) => (
-          <li
-            className="flex h-[8.5rem] flex-1 items-center justify-center"
-            key={index}
-          >
-            <Image src={logo.image} width={134} height={28} alt={logo.alt} />
-          </li>
-        ))}
+        {children}
       </ul>
     </div>
   );

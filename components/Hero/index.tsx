@@ -9,6 +9,7 @@ import CompanyLogos from "../CompanyLogos";
 import Image from "next/image";
 import { Button } from "..";
 import { urlFor } from "@/libs/sanity";
+import Link from "next/link";
 
 const heroIcons = [
   {
@@ -29,28 +30,33 @@ const heroIcons = [
   },
 ];
 
-const companyLogos = [
-  {
-    image: "/images/yourlogo.svg",
-    alt: "Your Logo",
-  },
-  {
-    image: "/images/yourlogo.svg",
-    alt: "Your Logo",
-  },
-  {
-    image: "/images/yourlogo.svg",
-    alt: "Your Logo",
-  },
-  {
-    image: "/images/yourlogo.svg",
-    alt: "Your Logo",
-  },
-  {
-    image: "/images/yourlogo.svg",
-    alt: "Your Logo",
-  },
-];
+// const companyLogos = [
+//   {
+//     image: "/images/yourlogo.svg",
+//     alt: "Your Logo",
+//     url: "/",
+//   },
+//   {
+//     image: "/images/yourlogo.svg",
+//     alt: "Your Logo",
+//     url: "/",
+//   },
+//   {
+//     image: "/images/yourlogo.svg",
+//     alt: "Your Logo",
+//     url: "/",
+//   },
+//   {
+//     image: "/images/yourlogo.svg",
+//     alt: "Your Logo",
+//     url: "/",
+//   },
+//   {
+//     image: "/images/yourlogo.svg",
+//     alt: "Your Logo",
+//     url: "/",
+//   },
+// ];
 
 const notificationImages = [
   {
@@ -67,22 +73,39 @@ const notificationImages = [
   },
 ];
 
+type Logo = {
+  _key: string;
+  image: string;
+  title: string;
+  alt: string;
+  iconUrl: string;
+  url?: string;
+}
+
 type HeroProps = {
   title: string;
   titleHighlight?: string;
   mainImage: string;
+  mainImageAlt: string;
+  imageText?: string;
   description?: string;
   btnText?: string;
   btnLink?: string;
+  socialProofText?: string;
+  companyLogos?: Logo[];
 };
 
 const Hero = ({
   title,
   titleHighlight = "Highlight",
   mainImage,
+  mainImageAlt,
+  imageText,
   description,
   btnText,
   btnLink,
+  socialProofText,
+  companyLogos,
 }: HeroProps) => {
   const parallaxRef = useRef(null);
 
@@ -127,15 +150,17 @@ const Hero = ({
 
               <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
                 <Image
-                  src={urlFor(mainImage).url() || "https://dummyimage.com/1024x1512.png/ac6aff/ffffff"}
+                  src={mainImage || "https://dummyimage.com/1024x1512.png/ac6aff/ffffff"}
 
-                  className="h-full w-full translate-y-[8%] scale-[1.7] md:-translate-y-[10%] md:scale-[1] lg:-translate-y-[23%]"
+                  className="h-full w-full object-cover md:scale-[1.1] "
                   width={1034}
                   height={1512}
-                  alt="AI"
+                  alt={mainImageAlt || "Main Image"}
                 />
 
-                <Generating text="Hello" className="absolute bottom-5 left-4 right-4 md:bottom-8 md:left-1/2 md:right-auto md:w-[31rem] md:-translate-x-1/2" />
+                {imageText && (
+                  <Generating text={imageText || "Text goes here"} className="absolute bottom-5 left-4 right-4 md:bottom-8 md:left-1/2 md:right-auto md:w-[31rem] md:-translate-x-1/2" />
+                )}
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="absolute -left-[5.5rem] bottom-[7.5rem] hidden rounded-2xl border border-n-1/10 bg-n-9/40 px-1 py-1 backdrop-blur xl:flex">
@@ -179,9 +204,26 @@ const Hero = ({
         </div>
 
         {companyLogos && (
-          <CompanyLogos companyLogos={companyLogos} className="relative z-10 mt-20 hidden lg:block" />
-        )}
+          <CompanyLogos text={socialProofText} className="relative z-10 mt-20 hidden lg:block">
+          {companyLogos.map((company) => (
+            <li className="flex h-[8.5rem] flex-1 items-center justify-center" key={company._key}>
 
+              {company.url !== null ? (
+                <Link href={company.url || ""}>
+                <span className="sr-only">{company.title}</span>
+                <Image src={company.iconUrl} width={134} height={28} alt={company.title} />
+              </Link>
+              ) : (
+                <>
+                <span className="sr-only">{company.title}</span>
+                <Image src={company.iconUrl} width={134} height={28} alt={company.title} />
+              </>
+              )}
+
+            </li>
+          ))}
+        </CompanyLogos>
+        )}
       </div>
 
       <BottomLine />

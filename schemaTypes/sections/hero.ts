@@ -1,3 +1,5 @@
+import { Rule } from "sanity";
+
 export const hero = {
   name: "hero",
   type: "object",
@@ -44,6 +46,26 @@ export const hero = {
       name: "imageText",
       title: "Image Text",
       type: "string",
+    },
+    {
+      name: "socialProofText",
+      title: "Social Proof Text",
+      type: "string",
+    },
+    {
+      name: "socialProof",
+      type: "array",
+      title: "Social Proof",
+      validation: (Rule: Rule) => [
+        Rule.required().min(3).error('A minimum of 3 items is required'),
+        Rule.max(6).error('A maxiumum of 6 links is recommended'),
+      ],
+      of: [
+        {
+          name: "imageLink",
+          type: "imageLink",
+        },
+      ],
     },
   ],
 };

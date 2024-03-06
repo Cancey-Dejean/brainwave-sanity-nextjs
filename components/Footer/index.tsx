@@ -66,7 +66,6 @@ export type FooterProps = {
 export default async function Footer({}: FooterProps) {
   const footers = await getData();
   const footer: any = footers;
-  console.log(footer[0].socialLinks);
 
   return (
     <footer className="mt-auto">
