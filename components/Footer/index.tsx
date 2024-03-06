@@ -1,6 +1,7 @@
 import { Section } from "../../components";
 import Link from "next/link";
 import Image from "next/image";
+import { client } from "@/libs/sanity";
 
 export const socials = [
   {
@@ -35,7 +36,40 @@ export const socials = [
   },
 ];
 
-const Footer = () => {
+async function getData() {
+  const query = `* [_type == "footers"][] {
+    title,
+    socialLinks [] {
+      _key,
+      title,
+      url,
+      "iconUrl": iconUrl.asset->url
+    }
+  }`;
+
+  const data = await client.fetch(query);
+
+  return data;
+}
+
+
+type Item = {
+  _key?: string;
+  title?: string;
+  url?: string;
+  iconUrl?: string;
+}
+
+
+export type FooterProps = {
+  socials?: Item[];
+};
+
+export default async function Footer({}: FooterProps) {
+  const footers = await getData();
+  const footer: any = footers;
+  console.log(footer[0].socialLinks);
+
   return (
     <Section crosses className="!px-0 !py-10">
       <div className="container flex items-center justify-center gap-10 max-sm:flex-col sm:justify-between">
@@ -44,14 +78,14 @@ const Footer = () => {
         </p>
 
         <ul className="flex flex-wrap gap-5">
-          {socials.map((item) => (
+          {footer[0].socialLinks.map((item: Item) => (
             <Link
-              key={item.id}
-              href={item.url}
+              key={item._key}
+              href={item.url || "#"}
               target="_blank"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-n-7 transition-colors hover:bg-n-6"
             >
-              <Image src={item.iconUrl} width={16} height={16} alt={item.title} />
+              <Image src={item.iconUrl || "#"} width={16} height={16} alt={item.title || "Social Icon"} />
             </Link>
           ))}
         </ul>
@@ -59,5 +93,3 @@ const Footer = () => {
     </Section>
   );
 };
-
-export default Footer;
