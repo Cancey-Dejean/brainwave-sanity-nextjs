@@ -9,11 +9,13 @@ async function getData() {
       _type == "hero" => {
         ...,
         "mainImage": mainImage.asset->url,
+        "mainImageAlt": mainImage.alt,
         socialProof [] {
-           _key,
-           title,
-           "iconUrl": iconUrl.asset->url,
-           url
+          _key,
+          title,
+          "iconUrl": iconUrl.asset->url,
+          "alt": iconUrl.alt,
+          url
         },
       },
     }

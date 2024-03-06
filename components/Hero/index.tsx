@@ -74,10 +74,10 @@ const notificationImages = [
 ];
 
 type Logo = {
-  _key: string;
+  _key?: string;
   image: string;
   title: string;
-  alt: string;
+  alt?: string;
   iconUrl: string;
   url?: string;
 }
@@ -211,7 +211,7 @@ const Hero = ({
               {company.url !== null ? (
                 <Link href={company.url || ""}>
                 <span className="sr-only">{company.title}</span>
-                <Image src={company.iconUrl} width={134} height={28} alt={company.title} />
+                <Image src={company.iconUrl} width={134} height={28} alt={company.alt || "Company Logo"} />
               </Link>
               ) : (
                 <>
