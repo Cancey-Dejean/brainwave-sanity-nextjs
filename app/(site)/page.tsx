@@ -32,7 +32,13 @@ async function getData() {
        }
       },
       _type == "services" => {
-          ...,
+        ...,
+        "featuredCardImage": featuredCardImage.asset->url,
+        "featuredCardImageAlt": featuredCardImage.alt,
+        "serviceCard1Image": serviceCard1Image.asset->url,
+        "serviceCard1ImageAlt": serviceCard1Image.alt,
+        "serviceCard2Image": serviceCard2Image.asset->url,
+        "serviceCard2ImageAlt": serviceCard2Image.alt,
       },
       _type == "pricing" => {
           ...,

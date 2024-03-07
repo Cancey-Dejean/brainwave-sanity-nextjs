@@ -2,10 +2,10 @@ import { PhotoChatMessage } from "../../../components/design/Services";
 import Image from "next/image";
 
 type ServiceCard1Props = {
-    mainImage: string;
-    mainImageAlt: string;
-    title: string;
-    description: string;
+    mainImage?: string;
+    mainImageAlt?: string;
+    title?: string;
+    description?: string;
     chatMessage?: string;
 };
 

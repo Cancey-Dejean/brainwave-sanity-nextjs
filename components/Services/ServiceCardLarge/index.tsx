@@ -1,21 +1,6 @@
 import Generating from '../../../components/Generating';
 import Image from 'next/image'
 
-const data = [
-    {
-      id: "0",
-      text: "Photo generating",
-    },
-    {
-      id: "1",
-      text: "Photo enhance",
-    },
-    {
-      id: "2",
-      text: "Seamless Integration",
-    }
-  ];
-
 
 export type ServiceCardLargeProps = {
     mainImage: string;
@@ -23,9 +8,10 @@ export type ServiceCardLargeProps = {
     title: string;
     description?: string;
     bottomText?: string;
+    children?: React.ReactNode;
 }
 
-export default function ServiceCardLarge({mainImage, mainImageAlt, title, description, bottomText}: ServiceCardLargeProps) {
+export default function ServiceCardLarge({mainImage, mainImageAlt, title, description, bottomText, children}: ServiceCardLargeProps) {
   return (
     <div className="relative z-1 mb-5 flex h-[39rem] items-center overflow-hidden rounded-3xl border border-n-1/10 p-8 lg:p-20 xl:h-[46rem] max-w-[1280px] mx-auto w-full">
         <div className="pointer-events-none absolute left-0 top-0 h-full w-full md:w-3/5 xl:w-auto">
@@ -48,20 +34,7 @@ export default function ServiceCardLarge({mainImage, mainImageAlt, title, descri
             )}
 
             <ul className="body-2">
-                {data.map((item) => (
-                    <li
-                    key={item.id}
-                    className="flex items-start border-t border-n-6 py-4"
-                    >
-                    <Image
-                        width={24}
-                        height={24}
-                        src="/images/check.svg"
-                        alt=""
-                    />
-                    <p className="ml-4">{item.text}</p>
-                    </li>
-                ))}
+                {children}
             </ul>
         </div>
 

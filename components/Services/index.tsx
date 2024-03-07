@@ -13,6 +13,7 @@ import Generating from "../Generating";
 import Image from "next/image";
 import { ServiceCard1, ServiceCard2, ServiceCardLarge } from "..";
 import { ServiceCardLargeProps } from "./ServiceCardLarge";
+import CheckTextRow, { CheckTextRowProps } from "../CheckTextRow";
 
 // export const brainwaveServices = [
 //   "Photo generating",
@@ -20,35 +21,69 @@ import { ServiceCardLargeProps } from "./ServiceCardLarge";
 //   "Seamless Integration",
 // ];
 
-
+// const data = [
+//   {
+//     id: "0",
+//     text: "Photo generating",
+//   },
+//   {
+//     id: "1",
+//     text: "Photo enhance",
+//   },
+//   {
+//     id: "2",
+//     text: "Seamless Integration",
+//   }
+// ];
 
 
 type ServicesProps = {
-  title: string;
+  heading: string;
   description?: string;
+  featuredCardImage?: string;
+  featuredCardTitle?: string;
+  featuredCardDesc?: string;
+  featuredCardItemList: CheckTextRowProps[];
+  serviceCard1Image?: string;
+  serviceCard1Title?: string;
+  serviceCard1Desc?: string;
+  serviceCard1ChatMessage?: string;
+  serviceCard2Image?: string;
+  serviceCard2Title?: string;
+  serviceCard2Desc?: string;
+  serviceCard2ChatMessage?: string;
+
 } & ServiceCardLargeProps;
 
-const Services = ({title, description}: ServicesProps) => {
+const Services = ({heading, description, featuredCardTitle, featuredCardDesc, featuredCardItemList, featuredCardImage, serviceCard1Image, serviceCard1Title, serviceCard1Desc, serviceCard1ChatMessage, serviceCard2Image, serviceCard2Title, serviceCard2Desc, serviceCard2ChatMessage}: ServicesProps) => {
   return (
     <Section id="how-to-use">
       <div className="container">
         <Heading
-          title={title || "Section Title"}
+          title={heading || "Section Title"}
           text={description || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non."}
         />
 
         <div className="relative">
           {/* ServiceCardLarge */}
-          <ServiceCardLarge title="Hello" mainImage="/images/services/service-1.png" />
-
+          {featuredCardItemList && (
+            <>
+              <ServiceCardLarge title={featuredCardTitle || "Featured"}
+              description={featuredCardDesc || "Hello"}
+              mainImage={featuredCardImage || ""}>
+                {featuredCardItemList.map((item) => (
+                   <CheckTextRow key={item._key} {...item} />
+                ))}
+              </ServiceCardLarge>
+            </>
+          )}
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
-
             {/* ServiceCard1 */}
-            <ServiceCard1 title="Section Title" chatMessage="Hello" description="Hello" mainImage="/images/services/service-2.png" mainImageAlt="Main Image" />
+            <ServiceCard1 title={serviceCard1Title} chatMessage={serviceCard1ChatMessage} description={serviceCard1Desc} mainImage={serviceCard1Image} mainImageAlt="Main Image" />
 
             {/* ServiceCard2 */}
-            <ServiceCard2 mainImage="/images/services/service-3.png" mainImageAlt="Hello" title="Title" />
+            <ServiceCard2 mainImage={serviceCard2Image} mainImageAlt="Hello" title={serviceCard2Title} description={serviceCard2Desc}  videoChatMessage={serviceCard2ChatMessage} />
 
           </div>
 

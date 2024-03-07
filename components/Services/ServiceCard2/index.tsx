@@ -31,16 +31,16 @@ export const brainwaveServicesIcons = [
 
 
 type ServiceCard1Props = {
-    mainImage: string;
-    mainImageAlt: string;
-    title: string;
+    mainImage?: string;
+    mainImageAlt?: string;
+    title?: string;
     description?: string;
     videoChatMessage?: string;
 };
 
 export default function ServiceCard2({mainImage, mainImageAlt, title, description, videoChatMessage}: ServiceCard1Props) {
   return (
-    <div className="overflow-hidden rounded-3xl bg-n-7 p-4 lg:min-h-[46rem] max-w-[628px] mx-auto">
+    <div className="overflow-hidden rounded-3xl bg-n-7 p-4 lg:min-h-[46rem] max-w-[628px] w-full mx-auto">
         <div className="px-4 py-12 xl:px-8">
         <h4 className="h4 mb-4">{title || "Section Title"}</h4>
         <p className="body-2 mb-[2rem] text-n-3">
@@ -86,7 +86,6 @@ export default function ServiceCard2({mainImage, mainImageAlt, title, descriptio
         />
 
         {videoChatMessage && <VideoChatMessage text={videoChatMessage} />}
-        {/* <VideoChatMessage text="Hello" /> */}
         <VideoBar />
         </div>
     </div>
