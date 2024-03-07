@@ -11,7 +11,7 @@ export type CheckTextRowProps = {
 
 export default function CheckTextRow({text, description, showBorder}: CheckTextRowProps) {
   return (
-    <li className={cn(`${showBorder ? "border-t border-n-6 py-3" : ""} flex items-start px-4 py-5`)}>
+    <li className={cn(`${showBorder ? "border-t border-n-6 py-3" : ""} flex flex-col items-start px-4 py-5`)}>
       <div className={cn("flex items-start")}>
         <Image
             src="/images/check.svg"
