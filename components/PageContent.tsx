@@ -10,11 +10,11 @@ import {
 export const PageContent = (section: any) => {
   switch (section._type) {
     case "hero":
-      return <Hero key={section._key} companyLogos={section.socialProof}  {...section}  />;
+      return <Hero {...section} />;
     case "benefits":
-      return <Benefits key={section._key} {...section} />;
+      return <Benefits {...section} />;
     case "collaboration":
-      return <Collaboration key={section._key} {...section} />;
+      return <Collaboration {...section} />;
     case "services":
       return <Services key={section._key} {...section} />;
     case "pricing":

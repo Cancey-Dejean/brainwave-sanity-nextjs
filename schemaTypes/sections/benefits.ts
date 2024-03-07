@@ -1,3 +1,5 @@
+import { Rule } from "sanity";
+
 export const benefits = {
   name: "benefits",
   type: "object",
@@ -5,25 +7,21 @@ export const benefits = {
   fields: [
     {
       name: "heading",
+      title: "Heading",
       type: "string",
     },
     {
-      name: "tagline",
-      type: "string",
-    },
-    {
-      name: "excerpt",
-      type: "text",
-    },
-    {
-      name: "image",
-      type: "image",
-      options: { hotspot: true },
-      fields: [
+      name: "cards",
+      type: "array",
+      title: "Cards",
+      validation: (Rule: Rule) => [
+        Rule.required().min(3).error('A minimum of 3 items is required'),
+        Rule.max(6).error('A maxiumum of 6 links is recommended'),
+      ],
+      of: [
         {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
+          name: "gradientCard",
+          type: "gradientCard",
         },
       ],
     },

@@ -92,7 +92,7 @@ type HeroProps = {
   btnText?: string;
   btnLink?: string;
   socialProofText?: string;
-  companyLogos?: Logo[];
+  socialProof?: Logo[];
 };
 
 const Hero = ({
@@ -105,7 +105,7 @@ const Hero = ({
   btnText,
   btnLink,
   socialProofText,
-  companyLogos,
+  socialProof,
 }: HeroProps) => {
   const parallaxRef = useRef(null);
 
@@ -203,9 +203,9 @@ const Hero = ({
           <BackgroundCircles parallaxRef={parallaxRef} />
         </div>
 
-        {companyLogos && (
+        {socialProof && (
           <CompanyLogos text={socialProofText} className="relative z-10 mt-20 hidden lg:block">
-          {companyLogos.map((company) => (
+          {socialProof.map((company) => (
             <li className="flex h-[8.5rem] flex-1 items-center justify-center" key={company._key}>
 
               {company.url !== null ? (

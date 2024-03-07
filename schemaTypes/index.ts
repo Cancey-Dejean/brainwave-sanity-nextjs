@@ -11,6 +11,7 @@ import { footer } from "./globals/footer";
 import { navLink } from "./components/navLink";
 import { button } from "./components/button";
 import { imageLink } from "./components/imageLink";
+import { gradientCard } from "./components/gradientCard";
 
 export const schemaTypes = [
   page,
@@ -26,4 +27,5 @@ export const schemaTypes = [
   footer,
   navLink,
   imageLink,
+  gradientCard,
 ];

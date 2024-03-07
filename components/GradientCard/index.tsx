@@ -6,11 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export type GradientCardProps = {
+  _key?: string;
   title?: string;
   description?: string;
   iconUrl?: string;
   iconAlt?: string;
-  variant: "v1" | "v2" | "v3" | "v4" | "v5" | "v6"
+  variant: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | string;
   backgroundImage?: string;
   gradientLight?: boolean;
   btnText?: string;

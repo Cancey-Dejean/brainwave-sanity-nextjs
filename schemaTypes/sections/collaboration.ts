@@ -5,27 +5,13 @@ export const collaboration = {
   fields: [
     {
       name: "heading",
+      title: "Heading",
       type: "string",
     },
     {
-      name: "tagline",
-      type: "string",
-    },
-    {
-      name: "excerpt",
+      name: "collabText",
+      title: "Collaboration Text",
       type: "text",
-    },
-    {
-      name: "image",
-      type: "image",
-      options: { hotspot: true },
-      fields: [
-        {
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-        },
-      ],
     },
   ],
 };

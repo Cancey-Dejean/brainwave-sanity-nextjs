@@ -18,6 +18,26 @@ async function getData() {
           url
         },
       },
+      _type == "benefits" => {
+          ...,
+          cards [] {
+            ...,
+            "iconUrl": iconUrl.asset->url,
+            "alt": iconUrl.alt,
+          }
+      },
+      _type == "collaboration" => {
+        ...,
+      },
+      _type == "services" => {
+          ...,
+      },
+      _type == "pricing" => {
+          ...,
+      },
+      _type == "roadmap" => {
+          ...,
+      },
     }
   }`;
 
@@ -29,8 +49,7 @@ async function getData() {
 export default async function Home() {
   const pages = await getData();
   const sections: any = pages.sections;
-  console.log(sections[0].socialProof[0].title);
-
+  // console.log(sections[0].socialProof[0].title);
 
   return <>{sections.map(PageContent)}</>;
 }

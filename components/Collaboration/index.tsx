@@ -85,20 +85,20 @@ export const collabApps = [
 ];
 
 type CollaborationProps = {
-  title?: string;
+  heading?: string;
   collabText?: string;
   btnText?: string;
   btnLink?: string;
 }
 
-export default function Collaboration({collabText, title, btnText, btnLink}: CollaborationProps) {
+export default function Collaboration({collabText, heading, btnText, btnLink}: CollaborationProps) {
   return (
     <>
       <Section crosses>
         <div className="container lg:flex">
           <div className="max-w-[25rem]">
             <h2 className="h2 mb-4 md:mb-8">
-              {title || "Section Title"}
+              {heading || "Section Title"}
             </h2>
 
             <ul className="mb-10 max-w-[22rem] md:mb-14">
