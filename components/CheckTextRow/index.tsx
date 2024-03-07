@@ -4,7 +4,7 @@ import React from 'react'
 
 export type CheckTextRowProps = {
     _key?: string;
-    text: string;
+    text?: string;
     description?: string | null;
     showBorder?: boolean;
 }

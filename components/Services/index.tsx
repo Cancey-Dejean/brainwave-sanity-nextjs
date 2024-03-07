@@ -1,25 +1,13 @@
 import Section from "../Section";
 import Heading from "../Heading";
-import { service1, service2, service3, check } from "../../public/images";
-// import { brainwaveServices, brainwaveServicesIcons } from "../../constants";
 import {
-  PhotoChatMessage,
   Gradient,
-  VideoBar,
-  VideoChatMessage,
 } from "../design/Services";
 
-import Generating from "../Generating";
-import Image from "next/image";
+
 import { ServiceCard1, ServiceCard2, ServiceCardLarge } from "..";
 import { ServiceCardLargeProps } from "./ServiceCardLarge";
 import CheckTextRow, { CheckTextRowProps } from "../CheckTextRow";
-
-// export const brainwaveServices = [
-//   "Photo generating",
-//   "Photo enhance",
-//   "Seamless Integration",
-// ];
 
 // const data = [
 //   {
@@ -84,7 +72,6 @@ const Services = ({heading, description, featuredCardTitle, featuredCardDesc, fe
 
             {/* ServiceCard2 */}
             <ServiceCard2 mainImage={serviceCard2Image} mainImageAlt="Hello" title={serviceCard2Title} description={serviceCard2Desc}  videoChatMessage={serviceCard2ChatMessage} />
-
           </div>
 
           <Gradient />

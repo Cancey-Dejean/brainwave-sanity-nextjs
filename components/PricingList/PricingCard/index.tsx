@@ -1,16 +1,23 @@
 import Image from 'next/image';
 import { Button, CheckTextRow } from '../../../components'
 
+type Feature = {
+  _key: string;
+  text: string;
+  // features: {
+  //   id: string;
+  //   text: string;
+  // }[];
+};
+
+
 export type PricingCardProps = {
-  id?: string;
+  _key?: string;
   title: string;
   description?: string;
   price?: string | null;
   children?: React.ReactNode;
-    features?: {
-        id: string;
-        text: string;
-    }[];
+  features?: Feature[]
 }
 
 export default function PricingCard({

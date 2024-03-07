@@ -22,6 +22,6 @@ export const PageContent = (section: any) => {
     case "roadmap":
       return <Roadmap key={section._key} {...section} />;
     default:
-      return <div><h1>Add Section to page in Sanity CMS</h1></div>;
+      return <div><h1>Add Section content to page in Sanity CMS</h1></div>;
   }
 };

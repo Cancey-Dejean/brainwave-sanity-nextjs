@@ -41,7 +41,9 @@ async function getData() {
         "serviceCard2ImageAlt": serviceCard2Image.alt,
       },
       _type == "pricing" => {
-          ...,
+        ...,
+        "mainImage": mainImage.asset->url,
+        "mainImageAlt": mainImage.alt,
       },
       _type == "roadmap" => {
           ...,
