@@ -1,13 +1,18 @@
+import { cn } from '@/libs/utils';
 import Image from 'next/image'
 import React from 'react'
 
 export type CheckTextRowProps = {
-    text?: string;
+    text: string;
+    description?: string | null;
+    showBorder?: boolean;
 }
 
-export default function CheckTextRow({text}: CheckTextRowProps) {
+export default function CheckTextRow({text, description, showBorder}: CheckTextRowProps) {
   return (
-    <li className="flex items-start border-t border-n-6 py-5">
+    <li  className={cn("",
+    showBorder ? "border-t border-n-6 py-3 " : "py-5" )}>
+      <div className={cn("flex items-start")}>
         <Image
             src="/images/check.svg"
             width={24}
@@ -15,6 +20,14 @@ export default function CheckTextRow({text}: CheckTextRowProps) {
             alt="Check"
         />
         <p className="body-2 ml-4">{text || "Title"}</p>
+        </div>
+
+        {description && (
+          <p className='body-2 mt-3 text-n-4'>
+            {description}
+          </p>
+        )}
+
     </li>
   )
 }

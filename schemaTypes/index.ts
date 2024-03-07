@@ -12,6 +12,8 @@ import { navLink } from "./components/navLink";
 import { button } from "./components/button";
 import { imageLink } from "./components/imageLink";
 import { gradientCard } from "./components/gradientCard";
+import { checkTextRow } from "./components/checkTextRow";
+import { collabApp } from "./components/collabApp";
 
 export const schemaTypes = [
   page,
@@ -28,4 +30,6 @@ export const schemaTypes = [
   navLink,
   imageLink,
   gradientCard,
+  checkTextRow,
+  collabApp,
 ];

@@ -1,4 +1,4 @@
-import { Button } from "..";
+import { Button, CheckTextRow } from "..";
 import { brainwaveSymbol, check } from "../../public/images";
 // import { collabApps, collabContent, collabText } from "../../constants";
 // import Button from "../Button";
@@ -7,91 +7,107 @@ import { LeftCurve, RightCurve } from "../design/Collaboration";
 import Image from "next/image";
 
 
-export const collabContent = [
-  {
-    id: "0",
-    title: "Seamless Integration",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ad minus quibusdam voluptatem nisi sapiente mollitia illum ipsum odio quos.",
-  },
-  {
-    id: "1",
-    title: "Smart Automation",
-    text: null
-  },
-  {
-    id: "2",
-    title: "Top-notch Security",
-    text: null
-  },
-];
+// export const collabContent = [
+//   {
+//     _key: "0",
+//     title: "Seamless Integration",
+//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ad minus quibusdam voluptatem nisi sapiente mollitia illum ipsum odio quos.",
+//   },
+//   {
+//     _key: "1",
+//     title: "Smart Automation",
+//     description: null
+//   },
+//   {
+//     _key: "2",
+//     title: "Top-notch Security",
+//     description: null
+//   },
+// ];
 
-export const collabApps = [
-  {
-    id: "0",
-    title: "Figma",
-    icon: "/images/collaboration/figma.png",
-    width: 26,
-    height: 36,
-  },
-  {
-    id: "1",
-    title: "Notion",
-    icon: "/images/collaboration/notion.png",
-    width: 34,
-    height: 36,
-  },
-  {
-    id: "2",
-    title: "Discord",
-    icon: "/images/collaboration/discord.png",
-    width: 36,
-    height: 28,
-  },
-  {
-    id: "3",
-    title: "Slack",
-    icon: "/images/collaboration/slack.png",
-    width: 34,
-    height: 35,
-  },
-  {
-    id: "4",
-    title: "Photoshop",
-    icon: "/images/collaboration/photoshop.png",
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "5",
-    title: "Protopie",
-    icon: "/images/collaboration/protopie.png",
-    width: 34,
-    height: 34,
-  },
-  {
-    id: "6",
-    title: "Framer",
-    icon: "/images/collaboration/framer.png",
-    width: 26,
-    height: 34,
-  },
-  {
-    id: "7",
-    title: "Raindrop",
-    icon: "/images/collaboration/raindrop.png",
-    width: 38,
-    height: 32,
-  },
-];
+// export const collabApps = [
+//   {
+//     _key: "0",
+//     title: "Figma",
+//     icon: "/images/collaboration/figma.png",
+//     width: 26,
+//     height: 36,
+//   },
+//   {
+//     _key: "1",
+//     title: "Notion",
+//     icon: "/images/collaboration/notion.png",
+//     width: 34,
+//     height: 36,
+//   },
+//   {
+//     _key: "2",
+//     title: "Discord",
+//     icon: "/images/collaboration/discord.png",
+//     width: 36,
+//     height: 28,
+//   },
+//   {
+//     _key: "3",
+//     title: "Slack",
+//     icon: "/images/collaboration/slack.png",
+//     width: 34,
+//     height: 35,
+//   },
+//   {
+//     _key: "4",
+//     title: "Photoshop",
+//     icon: "/images/collaboration/photoshop.png",
+//     width: 34,
+//     height: 34,
+//   },
+//   {
+//     _key: "5",
+//     title: "Protopie",
+//     icon: "/images/collaboration/protopie.png",
+//     width: 34,
+//     height: 34,
+//   },
+//   {
+//     _key: "6",
+//     title: "Framer",
+//     icon: "/images/collaboration/framer.png",
+//     width: 26,
+//     height: 34,
+//   },
+//   {
+//     _key: "7",
+//     title: "Raindrop",
+//     icon: "/images/collaboration/raindrop.png",
+//     width: 38,
+//     height: 32,
+//   },
+// ];
 
-type CollaborationProps = {
+type CheckItem = {
+  _key?: string;
+  text: string;
+  description?: string;
+}
+
+type IconItem = {
+  _key?: string;
+  icon?: string | null;
+  width?: number;
+  height?: number;
+  alt?: string;
+}
+
+export type CollaborationProps = {
   heading?: string;
   collabText?: string;
   btnText?: string;
   btnLink?: string;
+  collabContent: CheckItem[];
+  collabApps: IconItem[];
 }
 
-export default function Collaboration({collabText, heading, btnText, btnLink}: CollaborationProps) {
+export default function Collaboration({collabText, heading, btnText, btnLink, collabContent, collabApps}: CollaborationProps) {
   return (
     <>
       <Section crosses>
@@ -101,24 +117,14 @@ export default function Collaboration({collabText, heading, btnText, btnLink}: C
               {heading || "Section Title"}
             </h2>
 
-            <ul className="mb-10 max-w-[22rem] md:mb-14">
-              {collabContent.map((item) => (
-                <li className="mb-3 py-3" key={item.id}>
-                  <div className="flex items-center">
-                    <Image
-                      src="/images/check.svg"
-                      width={24}
-                      height={24}
-                      alt="check"
-                    />
-                    <h6 className="body-2 ml-5">{item.title}</h6>
-                  </div>
-                  {item.text && (
-                    <p className="body-2 mt-3 text-n-4">{item.text}</p>
-                  )}
-                </li>
-              ))}
-            </ul>
+            {collabContent && (
+              <ul className="mb-10 max-w-[22rem] md:mb-14">
+                {collabContent.map((item: CheckItem) => (
+                  <CheckTextRow text={item.text} description={item.description} key={item._key} />
+                ))}
+              </ul>
+            )}
+
 
             <Button as="a" href={btnLink}>{btnText}</Button>
           </div>
@@ -142,10 +148,11 @@ export default function Collaboration({collabText, heading, btnText, btnLink}: C
                 </div>
               </div>
 
-              <ul>
+              {collabApps && (
+                <ul>
                 {collabApps.map((app, index) => (
                   <li
-                    key={app.id}
+                    key={app._key}
                     className={`absolute left-1/2 top-0 -ml-[1.6rem] h-1/2 origin-bottom rotate-${
                       index * 45
                     }`}
@@ -159,13 +166,15 @@ export default function Collaboration({collabText, heading, btnText, btnLink}: C
                         className="m-auto"
                         width={app.width}
                         height={app.height}
-                        alt={app.title}
-                        src={app.icon}
+                        alt={app.alt  || "App Icon"}
+                        src={app.icon || "/images/collaboration/figma.png"}
                       />
                     </div>
                   </li>
                 ))}
               </ul>
+              )}
+
 
               <LeftCurve />
               <RightCurve />
