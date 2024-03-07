@@ -103,11 +103,12 @@ export type CollaborationProps = {
   collabText?: string;
   btnText?: string;
   btnLink?: string;
+  centerImage?: string;
   collabContent: CheckItem[];
   collabApps: IconItem[];
 }
 
-export default function Collaboration({collabText, heading, btnText, btnLink, collabContent, collabApps}: CollaborationProps) {
+export default function Collaboration({collabText, heading, btnText, btnLink, centerImage, collabContent, collabApps}: CollaborationProps) {
   return (
     <>
       <Section crosses>
@@ -139,7 +140,8 @@ export default function Collaboration({collabText, heading, btnText, btnLink, co
                 <div className="m-auto aspect-square w-[6rem] rounded-full bg-conic-gradient p-[0.2rem]">
                   <div className="flex h-full w-full items-center justify-center rounded-full bg-n-8">
                     <Image
-                      src="/images/brainwave-symbol.svg"
+                      src={centerImage || "/images/collaboration/figma.png"}
+                      // src="/images/brainwave-symbol.svg"
                       width={48}
                       height={48}
                       alt="brainwave"
@@ -164,8 +166,8 @@ export default function Collaboration({collabText, heading, btnText, btnLink, co
                     >
                       <Image
                         className="m-auto"
-                        width={app.width}
-                        height={app.height}
+                        width={app.width || 34}
+                        height={app.height || 34}
                         alt={app.alt  || "App Icon"}
                         src={app.icon || "/images/collaboration/figma.png"}
                       />
@@ -174,7 +176,6 @@ export default function Collaboration({collabText, heading, btnText, btnLink, co
                 ))}
               </ul>
               )}
-
 
               <LeftCurve />
               <RightCurve />

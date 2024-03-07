@@ -16,6 +16,18 @@ export const collaboration = {
       type: "text",
     },
     {
+      name: "centerImage",
+      title: "Center Image",
+      type: "image",
+      fields: [
+          {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+          },
+      ],
+    },
+    {
       name: "collabContent",
       type: "array",
       title: "Collaboration Content",

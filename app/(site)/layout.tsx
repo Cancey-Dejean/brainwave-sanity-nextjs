@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../globals.css";
 import { Footer, Header } from "../../components";
 import ButtonGradient from "../../components/svg/ButtonGradient";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -22,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <div className="flex h-screen flex-col">
           <Header />
           <main className="flex flex-col pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">

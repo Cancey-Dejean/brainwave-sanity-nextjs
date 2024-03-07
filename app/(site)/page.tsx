@@ -25,6 +25,7 @@ async function getData() {
       },
       _type == "collaboration" => {
         ...,
+       "centerImage": centerImage.asset->url,
        collabApps [] {
          ...,
          "icon": icon.asset->url,

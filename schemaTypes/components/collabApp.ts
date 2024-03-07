@@ -14,9 +14,9 @@ export const collabApp = {
             type: "image",
             fields: [
                 {
-                name: "alt",
-                type: "string",
-                title: "Alternative text",
+                    name: "alt",
+                    type: "string",
+                    title: "Alternative text",
                 },
             ],
         },
