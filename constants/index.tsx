@@ -133,3 +133,65 @@ export const collabContent = [
     description: null
   },
 ];
+
+export const socialProof = [
+  {
+    image: "/images/yourlogo.svg",
+    alt: "Your Logo",
+    url: "/",
+  },
+  {
+    image: "/images/yourlogo.svg",
+    alt: "Your Logo",
+    url: "/",
+  },
+  {
+    image: "/images/yourlogo.svg",
+    alt: "Your Logo",
+    url: "/",
+  },
+  {
+    image: "/images/yourlogo.svg",
+    alt: "Your Logo",
+    url: "/",
+  },
+  {
+    image: "/images/yourlogo.svg",
+    alt: "Your Logo",
+    url: "/",
+  },
+];
+
+export const heroIcons = [
+  {
+    image: "/images/home-smile.svg",
+    alt: "home smile",
+  },
+  {
+    image: "/images/file-02.svg",
+    alt: "file02",
+  },
+  {
+    image: "/images/search-md.svg",
+    alt: "searchMd",
+  },
+  {
+    image: "/images/plus-square.svg",
+    alt: "plusSquare",
+  },
+];
+
+export const notificationImages = [
+  {
+    image: "/images/notification/image-4.png",
+    alt: "notification image",
+  },
+  {
+    image: "/images/notification/image-3.png",
+    alt: "notification image",
+  },
+  {
+    image: "/images/notification/image-2.png",
+    alt: "notification image",
+  },
+];

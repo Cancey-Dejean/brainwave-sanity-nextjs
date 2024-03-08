@@ -42,7 +42,7 @@ export default function HeaderContent({logoImage, menu, ctaButtonText, ctaButton
                 >
                     <div className="relative z-2 m-auto flex flex-col items-center justify-center lg:flex-row">
                         {menu && menu.map((item) => (
-                            <NavLink {...item} handleClick={handleClick} />
+                            <NavLink key={item._key} {...item} handleClick={handleClick} />
                         ))}
                     </div>
 

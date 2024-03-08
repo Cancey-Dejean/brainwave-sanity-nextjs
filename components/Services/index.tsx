@@ -25,13 +25,15 @@ import CheckTextRow, { CheckTextRowProps } from "../CheckTextRow";
 // ];
 
 
+
+
 type ServicesProps = {
   heading: string;
   description?: string;
   featuredCardImage?: string;
   featuredCardTitle?: string;
   featuredCardDesc?: string;
-  featuredCardItemList: CheckTextRowProps[];
+  featuredCardItemList?: CheckTextRowProps[];
   serviceCard1Image?: string;
   serviceCard1Title?: string;
   serviceCard1Desc?: string;

@@ -9,68 +9,8 @@ import CompanyLogos from "../CompanyLogos";
 import Image from "next/image";
 import { Button } from "..";
 import Link from "next/link";
+import { heroIcons, notificationImages } from "../../constants";
 
-const heroIcons = [
-  {
-    image: "/images/home-smile.svg",
-    alt: "home smile",
-  },
-  {
-    image: "/images/file-02.svg",
-    alt: "file02",
-  },
-  {
-    image: "/images/search-md.svg",
-    alt: "searchMd",
-  },
-  {
-    image: "/images/plus-square.svg",
-    alt: "plusSquare",
-  },
-];
-
-// const companyLogos = [
-//   {
-//     image: "/images/yourlogo.svg",
-//     alt: "Your Logo",
-//     url: "/",
-//   },
-//   {
-//     image: "/images/yourlogo.svg",
-//     alt: "Your Logo",
-//     url: "/",
-//   },
-//   {
-//     image: "/images/yourlogo.svg",
-//     alt: "Your Logo",
-//     url: "/",
-//   },
-//   {
-//     image: "/images/yourlogo.svg",
-//     alt: "Your Logo",
-//     url: "/",
-//   },
-//   {
-//     image: "/images/yourlogo.svg",
-//     alt: "Your Logo",
-//     url: "/",
-//   },
-// ];
-
-const notificationImages = [
-  {
-    image: "/images/notification/image-4.png",
-    alt: "notification image",
-  },
-  {
-    image: "/images/notification/image-3.png",
-    alt: "notification image",
-  },
-  {
-    image: "/images/notification/image-2.png",
-    alt: "notification image",
-  },
-];
 
 type Logo = {
   _key?: string;
@@ -96,7 +36,7 @@ type HeroProps = {
 
 const Hero = ({
   title,
-  titleHighlight = "Highlight",
+  titleHighlight,
   mainImage,
   mainImageAlt,
   imageText,
@@ -122,7 +62,7 @@ const Hero = ({
 
             {titleHighlight && (
               <span className="relative ml-4 inline-block">
-                {titleHighlight}
+                {titleHighlight || "Highlight"}
                 <Image
                   src="/images/hero/curve.png"
                   className="absolute left-0 top-full w-full xl:-mt-2"
@@ -149,7 +89,7 @@ const Hero = ({
 
               <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
                 <Image
-                  src={mainImage || "https://dummyimage.com/1024x1512.png/ac6aff/ffffff"}
+                  src={mainImage || "https://dummyimage.com/1034x1512.png/ac6aff/ffffff"}
 
                   className="h-full w-full object-cover md:scale-[1.1] "
                   width={1034}
@@ -166,7 +106,7 @@ const Hero = ({
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
                         <Image
-                          src={icon.image}
+                          src={icon.image || "https://dummyimage.com/24x25.png/ac6aff/ffffff"}
                           width={24}
                           height={25}
                           alt={icon.alt}
@@ -210,7 +150,7 @@ const Hero = ({
               {company.url !== null ? (
                 <Link href={company.url || ""}>
                 <span className="sr-only">{company.title}</span>
-                <Image src={company.iconUrl} width={134} height={28} alt={company.alt || "Company Logo"} />
+                <Image src={company.iconUrl  || "https://dummyimage.com/134x28.png/ac6aff/ffffff" } width={134} height={28} alt={company.alt || "Company Logo"} />
               </Link>
               ) : (
                 <>

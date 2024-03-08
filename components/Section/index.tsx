@@ -39,7 +39,7 @@ const Section = ({
               crossesOffset && crossesOffset
             } pointer-events-none right-10 lg:block xl:left-10`}
           />
-          <SectionSvg crossesOffset={crossesOffset} />
+          <SectionSvg crossesOffset={crossesOffset as any} />
         </>
       )}
     </div>

@@ -4,7 +4,7 @@ import ChatBubbleWing from "../svg/ChatBubbleWing";
 export const Gradient = () => {
   return (
     <div className="pointer-events-none absolute -left-[10rem] top-0 h-[56.625rem] w-[56.625rem] opacity-50 mix-blend-color-dodge">
-      <img
+      <Image
         className="absolute left-1/2 top-1/2 h-[88.5625rem] w-[79.5625rem] max-w-[79.5625rem] -translate-x-1/2 -translate-y-1/2"
         src={"/images/gradient.png"}
         width={1417}
@@ -50,7 +50,7 @@ export const VideoChatMessage = ({text}: {text: string}) => {
 export const VideoBar = () => {
   return (
     <div className="absolute bottom-0 left-0 flex w-full items-center p-6">
-      <img
+      <Image
         src={"/images/play.svg"}
         width={24}
         height={24}

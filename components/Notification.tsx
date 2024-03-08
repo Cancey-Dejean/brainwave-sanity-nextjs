@@ -44,7 +44,7 @@ const Notification = ({
                 key={index}
                 className="flex h-6 w-6 overflow-hidden rounded-full border-2 border-n-12"
               >
-                <img
+                <Image
                   src={item.image}
                   className="w-full"
                   width={20}
