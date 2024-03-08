@@ -11,7 +11,7 @@ export type GradientCardProps = {
   description?: string;
   iconUrl?: string;
   iconAlt?: string;
-  variant: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | string;
+  variant?: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | string;
   backgroundImage?: string;
   gradientLight?: boolean;
   btnText?: string;
@@ -42,13 +42,17 @@ export default function GradientCard({
       )}
     >
       <div className=" relative z-1 flex min-h-[22rem] flex-col p-[2.4rem]">
-        <h5 className="h5 mb-5">{title}</h5>
-        <p className="body-2 mb-6 text-n-3">{description}</p>
-        <div className="mt-auto flex items-center">
-          <Image src={iconUrl || "/images/benefits/icon-1.svg"} width={48} height={48} alt={iconAlt || "Alt Text"} />
+        <h5 className="h5 mb-5">{title || "Section Title"}</h5>
+        {description && <p className="body-2 mb-6 text-n-3">{description}</p>}
+
+        <div className="mt-auto flex gap-6 items-center">
+          <Image src={iconUrl || "https://dummyimage.com/48x48.png/ac6aff/ffffff"} className="rounded-lg" width={48} height={48} alt={iconAlt || "Alt Text"} />
+
+          <div className="flex items-center">
           <p className="ml-auto font-code text-xs font-bold uppercase tracking-wider text-n-1">
             {btnText || "Explore more"}
           </p>
+
           {btnUrl !== "" ? (
             <Link href={btnUrl || "#"}>
               <Arrow />
@@ -56,6 +60,7 @@ export default function GradientCard({
           ) : (
             <Arrow />
           )}
+          </div>
         </div>
       </div>
 
@@ -67,7 +72,7 @@ export default function GradientCard({
       >
         <div className="absolute inset-0 opacity-0 transition-opacity group-hover:opacity-10">
           <Image
-            src={backgroundImage || "/images/benefits/image-2.png"}
+            src={backgroundImage || "https://dummyimage.com/760x724.png/ac6aff/ffffff"}
             width={380}
             height={362}
             alt={title || ""}

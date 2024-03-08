@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="flex flex-col">
-          <Header />
+          <Header stickyHeader />
           <main className="flex flex-col pt-[4.75rem] lg:pt-[5.25rem] overflow-x-hidden">
             {children}
           </main>

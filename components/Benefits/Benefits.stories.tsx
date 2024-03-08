@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Benefits from "./";
+import { cards } from "../../constants";
 
 
 const meta = {
@@ -8,9 +9,10 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
-    title: "Section Title",
+    heading: "Section Title",
+    cards: cards,
   },
   argTypes: {},
 } satisfies Meta<typeof Benefits>;

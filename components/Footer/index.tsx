@@ -1,7 +1,7 @@
 import { Section } from "../../components";
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "@/libs/sanity";
+import { client } from "../../libs/sanity";
 
 export const socials = [
   {

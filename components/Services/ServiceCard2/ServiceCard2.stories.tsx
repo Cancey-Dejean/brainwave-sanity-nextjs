@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ServiceCard2 from "./";
+import ServiceCard2 from ".";
 
 
 
@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   decorators: [
     (Story) => (
       <div className="py-15">
@@ -19,10 +19,10 @@ const meta = {
   ],
   args: {
     mainImage: "/images/services/service-2.png",
-    mainImageAlt: "string",
-    title: "string",
-    description: "string",
-    videoChatMessage: "string",
+    mainImageAlt: "image",
+    title: "Title",
+    description: "This is a description",
+    videoChatMessage: "This is a message from the video chatbot",
   },
   argTypes: {},
 } satisfies Meta<typeof ServiceCard2>;

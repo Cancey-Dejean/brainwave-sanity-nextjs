@@ -1,4 +1,4 @@
-import { client } from "@/libs/sanity";
+import { client } from "../../libs/sanity";
 import { PageContent } from "../../components/PageContent";
 async function getData() {
   const query = `* [slug.current == "/"][0] {

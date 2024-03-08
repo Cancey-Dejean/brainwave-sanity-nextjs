@@ -1,4 +1,4 @@
-import { client } from "@/libs/sanity";
+import { client } from "../../libs/sanity";
 import HeaderContent from "./HeaderContent";
 
 async function getData() {
@@ -63,6 +63,7 @@ type Item = {
 }
 
 export type HeaderProps = {
+  stickyHeader?: boolean;
   logoImage?: string;
   logoAlt?: string;
   logoText?: string;

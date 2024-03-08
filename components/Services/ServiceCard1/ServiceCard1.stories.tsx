@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ServiceCard1 from "./";
+import ServiceCard1 from ".";
 
 
 const meta = {
@@ -8,21 +8,15 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
     mainImage: "/images/services/service-2.png",
-    mainImageAlt: "string",
-    title: "string",
-    description: "string",
-    chatMessage: "string",
+    mainImageAlt: "Robot",
+    title: "Title",
+    description: "Description goes here",
+    chatMessage: "This is a message from the chatbot",
   },
-  argTypes: {
-    // variant: {
-    //   control: {
-    //     type: "select",
-    //   },
-    // },
-  },
+  argTypes: {},
 } satisfies Meta<typeof ServiceCard1>;
 
 export default meta;

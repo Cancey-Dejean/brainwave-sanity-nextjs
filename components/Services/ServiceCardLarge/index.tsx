@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 
 export type ServiceCardLargeProps = {
-    mainImage: string;
+    mainImage?: string;
     mainImageAlt?: string;
-    title: string;
+    title?: string;
     description?: string;
     bottomText?: string;
     children?: React.ReactNode;
@@ -20,7 +20,7 @@ export default function ServiceCardLarge({mainImage, mainImageAlt, title, descri
             width={800}
             alt={mainImageAlt || "Alt Text"}
             height={730}
-            src={ mainImage || "/images/services/service-1.png"}
+            src={ mainImage || "https://dummyimage.com/800x730.png/ac6aff/ffffff"}
           />
         </div>
 
@@ -28,9 +28,9 @@ export default function ServiceCardLarge({mainImage, mainImageAlt, title, descri
             <h4 className="h4 mb-4">{title || "Title"}</h4>
 
             {description && (
-                <p className="body-2 mb-[3rem] text-n-3">
-                    {description || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non."}
-                </p>
+              <p className="body-2 mb-[3rem] text-n-3">
+                  {description || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non."}
+              </p>
             )}
 
             <ul className="body-2">
@@ -40,7 +40,7 @@ export default function ServiceCardLarge({mainImage, mainImageAlt, title, descri
 
 
         {bottomText && (
-            <Generating text={bottomText} className="lg-right-auto absolute bottom-4 left-4 right-4 border border-n-1/10 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2"  />
+          <Generating text={bottomText} className="lg-right-auto absolute bottom-4 left-4 right-4 border border-n-1/10 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2" />
         )}
     </div>
   )

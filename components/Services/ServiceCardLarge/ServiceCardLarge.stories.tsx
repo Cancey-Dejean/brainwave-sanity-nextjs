@@ -14,14 +14,14 @@ const meta = {
       </div>
     ),
   ],
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
     mainImage: "/images/services/service-1.png",
     mainImageAlt: "Main Image",
     title: "Photo Enhance",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non.",
-    bottomText: "Bottom Text",
+    bottomText: "Bottom text goes here",
   },
   argTypes: {
 

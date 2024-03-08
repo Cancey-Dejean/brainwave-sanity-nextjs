@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Collaboration from ".";
+import { collabApps, collabContent } from "../../constants";
 
 
 const meta = {
@@ -8,16 +9,16 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
-    title: "Collaboration",
-    collabText: "Collaborate",
+    heading: "Collaboration",
+    collabText: "Description goes here",
     btnText: "Learn More",
     btnLink: "#",
+    collabApps: collabApps,
+    collabContent: collabContent as any,
   },
-  argTypes: {
-
-  },
+  argTypes: {},
 } satisfies Meta<typeof Collaboration>;
 
 export default meta;

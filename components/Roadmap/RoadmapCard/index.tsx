@@ -5,7 +5,7 @@ export type RoadmapCardProps = {
   _key?: string;
   colorful?: boolean;
   date?: string;
-  status?: "done" | "in progress" | string
+  status?: "done" | "in progress"
   mainImage?: string;
   mainImageAlt?: string;
   title?: string;
@@ -14,7 +14,7 @@ export type RoadmapCardProps = {
 
 export default function RoadmapCard({ colorful, date, mainImage, mainImageAlt, title, description, status }: RoadmapCardProps) {
   return (
-    <div className={`rounded-[2.5rem] max-w-[630px] mx-auto p-0.25 md:flex even:md:translate-y-[7rem] ${colorful ? "bg-conic-gradient" : "bg-n-6"}`}>
+    <div className={`rounded-[2.5rem] max-w-[630px] w-full mx-auto p-0.25 md:flex even:md:translate-y-[7rem] ${colorful ? "bg-conic-gradient" : "bg-n-6"}`}>
       <div className="relative overflow-hidden rounded-[2.4375rem] bg-n-8 p-8 xl:p-15">
         <div className="absolute left-0 top-0 max-w-full">
           <Image
@@ -49,7 +49,7 @@ export default function RoadmapCard({ colorful, date, mainImage, mainImageAlt, t
           <div className="-mx-15 -my-10 mb-10">
             <Image
               className="w-full"
-              src={mainImage || "/images/roadmap/image-1.png"}
+              src={mainImage || "https://dummyimage.com/628x426.png/ac6aff/ffffff"}
               width={628}
               height={426}
               alt={mainImageAlt || "Image"}

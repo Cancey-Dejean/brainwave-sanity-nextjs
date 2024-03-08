@@ -26,7 +26,7 @@ export const PhotoChatMessage = ({text}: {text: string}) => {
 
 export const VideoChatMessage = ({text}: {text: string}) => {
   return (
-    <div className="absolute left-[3.125rem] top-8 w-full max-w-[14rem] rounded-t-xl rounded-br-xl bg-n-6 pb-7 pl-5 pr-2.5 pt-2.5 font-code text-base md:max-w-[17.5rem]">
+    <div className="absolute left-[3.125rem] top-8 w-full max-w-[14rem] rounded-t-xl rounded-br-xl bg-n-6 pb-7 pl-5 pr-5 pt-2.5 font-code text-base md:max-w-[17.5rem]">
       {text || "Text"}
       <div className="absolute -bottom-[1.125rem] left-5 flex h-[2.25rem] w-[2.25rem] items-center justify-center rounded-[0.75rem] bg-color-1">
         <Image
@@ -36,7 +36,7 @@ export const VideoChatMessage = ({text}: {text: string}) => {
           alt="Brainwave"
         />
       </div>
-      <p className="tagline absolute bottom-1 right-2.5 text-[0.625rem] uppercase text-n-3">
+      <p className="tagline absolute bottom-2 right-3 text-[0.625rem] uppercase text-n-3">
         just now
       </p>
       <ChatBubbleWing

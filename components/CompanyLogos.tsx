@@ -1,17 +1,6 @@
-import { urlFor } from "@/libs/sanity";
-import Image from "next/image";
-import Link from "next/link";
-
-// type Logo = {
-//   image: string;
-//   alt: string;
-//   url?: string;
-// };
-
 export type CompanyLogosProps = {
   className?: string;
   text?: string;
-  // companyLogos: Logo[];
   children?: React.ReactNode;
 };
 

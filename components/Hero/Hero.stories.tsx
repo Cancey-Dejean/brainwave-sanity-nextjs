@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Hero from "./";
+import Hero from ".";
 
 
 const meta = {

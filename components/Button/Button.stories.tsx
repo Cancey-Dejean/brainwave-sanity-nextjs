@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./";
+import { Button } from ".";
 
 
 const meta = {
@@ -12,7 +12,7 @@ const meta = {
   args: {
     children: "Button",
     as: "a",
-    white: false,
+    white: true,
     className: "",
     px: "",
     href: "",

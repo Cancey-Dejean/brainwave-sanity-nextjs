@@ -7,90 +7,13 @@ import { LeftCurve, RightCurve } from "../design/Collaboration";
 import Image from "next/image";
 
 
-// export const collabContent = [
-//   {
-//     _key: "0",
-//     title: "Seamless Integration",
-//     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ad minus quibusdam voluptatem nisi sapiente mollitia illum ipsum odio quos.",
-//   },
-//   {
-//     _key: "1",
-//     title: "Smart Automation",
-//     description: null
-//   },
-//   {
-//     _key: "2",
-//     title: "Top-notch Security",
-//     description: null
-//   },
-// ];
-
-// export const collabApps = [
-//   {
-//     _key: "0",
-//     title: "Figma",
-//     icon: "/images/collaboration/figma.png",
-//     width: 26,
-//     height: 36,
-//   },
-//   {
-//     _key: "1",
-//     title: "Notion",
-//     icon: "/images/collaboration/notion.png",
-//     width: 34,
-//     height: 36,
-//   },
-//   {
-//     _key: "2",
-//     title: "Discord",
-//     icon: "/images/collaboration/discord.png",
-//     width: 36,
-//     height: 28,
-//   },
-//   {
-//     _key: "3",
-//     title: "Slack",
-//     icon: "/images/collaboration/slack.png",
-//     width: 34,
-//     height: 35,
-//   },
-//   {
-//     _key: "4",
-//     title: "Photoshop",
-//     icon: "/images/collaboration/photoshop.png",
-//     width: 34,
-//     height: 34,
-//   },
-//   {
-//     _key: "5",
-//     title: "Protopie",
-//     icon: "/images/collaboration/protopie.png",
-//     width: 34,
-//     height: 34,
-//   },
-//   {
-//     _key: "6",
-//     title: "Framer",
-//     icon: "/images/collaboration/framer.png",
-//     width: 26,
-//     height: 34,
-//   },
-//   {
-//     _key: "7",
-//     title: "Raindrop",
-//     icon: "/images/collaboration/raindrop.png",
-//     width: 38,
-//     height: 32,
-//   },
-// ];
-
 type CheckItem = {
   _key?: string;
-  text: string;
+  text?: string;
   description?: string;
 }
 
-type IconItem = {
+export type IconItem = {
   _key?: string;
   icon?: string | null;
   width?: number;
@@ -141,7 +64,6 @@ export default function Collaboration({collabText, heading, btnText, btnLink, ce
                   <div className="flex h-full w-full items-center justify-center rounded-full bg-n-8">
                     <Image
                       src={centerImage || "/images/collaboration/figma.png"}
-                      // src="/images/brainwave-symbol.svg"
                       width={48}
                       height={48}
                       alt="brainwave"

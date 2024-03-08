@@ -78,7 +78,7 @@ export default function ServiceCard2({mainImage, mainImageAlt, title, descriptio
 
         <div className="relative h-[20rem] overflow-hidden rounded-xl bg-n-8 md:h-[25rem]">
         <Image
-            src={mainImage || "/images/services/service-3.png"}
+            src={mainImage || "https://dummyimage.com/520x400.png/ac6aff/ffffff"}
             className="h-full w-full object-cover"
             width={520}
             height={400}

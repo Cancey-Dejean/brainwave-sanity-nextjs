@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import GradientCard from "./";
+import GradientCard from ".";
 
 
 const meta = {
@@ -8,7 +8,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
     title: "Section Title",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non.",
