@@ -1,5 +1,7 @@
 import { client } from "../../libs/sanity";
 import { PageContent } from "../../components/PageContent";
+
+export const dynamic = "force-dynamic";
 async function getData() {
   const query = `* [slug.current == "/"][0] {
     sections[] {
