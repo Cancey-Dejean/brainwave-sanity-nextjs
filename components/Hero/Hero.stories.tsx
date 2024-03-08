@@ -9,7 +9,7 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
     title: "Title",
     titleHighlight: "Highlight",

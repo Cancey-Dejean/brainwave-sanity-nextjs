@@ -16,7 +16,7 @@ export default function ServiceCard1({mainImage, mainImageAlt, title, descriptio
         />
 
         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-n-8/0 to-n-8/90 p-8 lg:p-15">
-            <h4 className="h4 mb-4">{title || "Section Title"}</h4>
+            <h3 className="h4 mb-4">{title || "Section Title"}</h3>
 
             <p className="body-2 mb-[3rem] text-n-3">
                 {description || "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, rerum!"}

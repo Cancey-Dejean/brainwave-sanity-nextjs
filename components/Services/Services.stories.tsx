@@ -7,7 +7,7 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
   args: {
     heading: "Section Title",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus officia quo non.",

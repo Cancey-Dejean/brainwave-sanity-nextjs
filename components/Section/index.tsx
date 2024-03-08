@@ -17,7 +17,7 @@ const Section = ({
   children,
 }: SectionProps) => {
   return (
-    <div
+    <section
       id={id}
       className={`
       relative
@@ -42,7 +42,7 @@ const Section = ({
           <SectionSvg crossesOffset={crossesOffset as any} />
         </>
       )}
-    </div>
+    </section>
   );
 };
 
