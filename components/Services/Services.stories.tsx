@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Services from ".";
+import Services from "./";
 
 const meta = {
   title: "Sections/Services",

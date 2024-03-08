@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Collaboration from ".";
+import Collaboration from "./";
 import { collabApps, collabContent } from "../../constants";
 
 

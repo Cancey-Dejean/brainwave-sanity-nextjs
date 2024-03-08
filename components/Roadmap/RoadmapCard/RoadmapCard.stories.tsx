@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import RoadmapCard from ".";
-
+import RoadmapCard from "./";
 
 const meta = {
   title: "Components/Cards/RoadmapCard",

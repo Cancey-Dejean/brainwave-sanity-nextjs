@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ServiceCard1 from ".";
+import ServiceCard1 from "./";
 
 
 const meta = {

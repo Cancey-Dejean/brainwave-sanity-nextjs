@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ServiceCard2 from ".";
+import ServiceCard2 from "./";
 
 
 
