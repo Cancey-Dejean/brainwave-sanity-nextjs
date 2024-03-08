@@ -6,11 +6,11 @@ import ButtonGradient from "../../components/svg/ButtonGradient";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Acme Dashboard",
-    default: "Acme Dashboard",
+    template: "%s | Brainwave",
+    default: "Brainwave",
   },
-  description: "The official Next.js Learn Dashboard built with App Router.",
-  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+  description: "The official Brainwave landing page.",
+  metadataBase: new URL("https://brainwave-sanity-nextjs.vercel.app"),
 };
 
 export default function RootLayout({
