@@ -4,8 +4,8 @@ export const navLink = {
   title: "NavLink",
   fields: [
     {
-      name: "title",
-      title: "Title",
+      name: "label",
+      title: "Label",
       type: "string",
     },
     {

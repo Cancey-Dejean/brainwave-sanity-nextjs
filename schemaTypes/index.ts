@@ -15,6 +15,7 @@ import { gradientCard } from "./components/gradientCard";
 import { checkTextRow } from "./components/checkTextRow";
 import { collabApp } from "./components/collabApp";
 import { pricingCard } from "./components/pricingCard";
+import { roadmapCard } from "./components/roadmapCard";
 
 export const schemaTypes = [
   page,
@@ -34,4 +35,5 @@ export const schemaTypes = [
   checkTextRow,
   collabApp,
   pricingCard,
+  roadmapCard,
 ];

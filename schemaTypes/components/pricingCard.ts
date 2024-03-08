@@ -21,7 +21,6 @@ export const pricingCard = {
         name: "price",
         title: "Price",
         type: "string",
-        validation: (Rule: Rule) => Rule.required(),
       },
       {
         name: "features",

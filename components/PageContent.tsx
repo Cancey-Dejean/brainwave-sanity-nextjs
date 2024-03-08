@@ -10,11 +10,11 @@ import {
 export const PageContent = (section: any) => {
   switch (section._type) {
     case "hero":
-      return <Hero {...section} />;
+      return <Hero key={section._key} {...section} />;
     case "benefits":
-      return <Benefits {...section} />;
+      return <Benefits key={section._key} {...section} />;
     case "collaboration":
-      return <Collaboration {...section} />;
+      return <Collaboration key={section._key} {...section} />;
     case "services":
       return <Services key={section._key} {...section} />;
     case "pricing":
@@ -22,6 +22,6 @@ export const PageContent = (section: any) => {
     case "roadmap":
       return <Roadmap key={section._key} {...section} />;
     default:
-      return <div><h1>Add Section content to page in Sanity CMS</h1></div>;
+      return <div className="py-10 text-center"><h1>Add Section content to page in Sanity CMS</h1></div>;
   }
 };

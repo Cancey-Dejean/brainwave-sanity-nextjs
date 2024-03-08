@@ -68,7 +68,6 @@ import { PricingCardProps } from "../PricingList/PricingCard";
 // },
 // ];
 
-
 type PricingProps = {
   heading?: string;
   tag?: string;
@@ -109,23 +108,20 @@ const Pricing = ({tag, heading, linkText, linkUrl, mainImage,  mainImageAlt, pri
 
         {pricingCards && (
           <div className="relative">
-          <PricingList>
-            {pricingCards.map((item) => (
-              <>
-              <PricingCard price={item.price} title={item.title} key={item._key} description={item.description}>
-                {item.features && item.features.map((feature) => (
-                  <CheckTextRow text={feature.text} key={feature._key} />
-                ))}
-              </PricingCard>
-              </>
-            ))}
-          </PricingList>
+            <PricingList>
+              {pricingCards.map((item) => (
+                <PricingCard price={item.price} title={item.title} key={item._key} description={item.description}>
+                  {item.features && item.features.map((feature) => (
+                    <CheckTextRow text={feature.text} key={feature._key} />
+                  ))}
+                </PricingCard>
+              ))}
+            </PricingList>
 
-          <LeftLine />
-          <RightLine />
-        </div>
-)}
-
+            <LeftLine />
+            <RightLine />
+          </div>
+        )}
 
         {linkText && (
           <div className="mt-10 flex justify-center">

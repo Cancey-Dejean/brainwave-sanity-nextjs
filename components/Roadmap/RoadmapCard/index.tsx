@@ -1,7 +1,8 @@
 import TagLine from "../../../components/Tagline";
 import Image from "next/image";
 
-type RoadmapCardProps = {
+export type RoadmapCardProps = {
+  _key?: string;
   colorful?: boolean;
   date?: string;
   status?: "done" | "in progress" | string
@@ -39,7 +40,7 @@ export default function RoadmapCard({ colorful, date, mainImage, mainImageAlt, t
                 }
                 width={16}
                 height={16}
-                alt={status}
+                alt={`${status}` + " icon"}
               />
               <div className="tagline">{status}</div>
             </div>

@@ -8,7 +8,6 @@ import Notification from "../Notification";
 import CompanyLogos from "../CompanyLogos";
 import Image from "next/image";
 import { Button } from "..";
-import { urlFor } from "@/libs/sanity";
 import Link from "next/link";
 
 const heroIcons = [
@@ -111,9 +110,9 @@ const Hero = ({
 
   return (
     <Section
-      className="-mt-[5.25rem] pt-[12rem]"
+      className="-mt-40"
       crosses
-      crossesOffset="lg:translate-y-[5.25rem]"
+      crossesOffset="lg:translate-y-[4.75rem]"
       id="hero"
     >
       <div className="container relative" ref={parallaxRef}>

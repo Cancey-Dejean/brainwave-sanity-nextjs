@@ -28,9 +28,9 @@ export default function HeaderContent({logoImage, menu, ctaButtonText, ctaButton
         setOpenNavigation(false);
     };
     return (
-        <div className={`sticky left-0 top-0 z-50 w-full  border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
+        <div className={`sticky left-0 top-0 z-50 w-full border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
             <div className="flex items-center px-5 max-lg:py-4 lg:px-7.5 xl:px-10">
-                <Link className="w-[12rem] xl:mr-8" href="#hero">
+                <Link className="w-[12rem]" href="#hero">
                     <Image src={logoImage || "/images/brainwave.svg"} width={190} height={40} alt={"Brainwave"}
                     />
                 </Link>
@@ -40,17 +40,17 @@ export default function HeaderContent({logoImage, menu, ctaButtonText, ctaButton
                     openNavigation ? "flex" : "hidden"
                     } fixed bottom-0 left-0 right-0 top-[5rem] bg-n-8 lg:static lg:mx-auto lg:flex lg:bg-transparent`}
                 >
-                    <div className="relative z-2 m-auto flex flex-col items-center justify-center gap-6 lg:flex-row">
-                    {menu.map(({title, url, _key, onlyMobile}) => (
-                        <NavLink label={title} url={url} key={_key} onlyMobile={onlyMobile} handleClick={handleClick} />
-                    ))}
+                    <div className="relative z-2 m-auto flex flex-col items-center justify-center lg:flex-row">
+                        {menu && menu.map((item) => (
+                            <NavLink {...item} handleClick={handleClick} />
+                        ))}
                     </div>
 
                     <HamburgerMenu />
                 </nav>
 
                 <div className="lg:flex hidden items-center gap-8">
-                    {ctaLinkText && <NavLink className="px-0" label={ctaLinkText} url={ctaLinkUrl || "/"} />}
+                    {ctaLinkText && <NavLink className="!px-0" label={ctaLinkText} url={ctaLinkUrl || "/"} />}
 
 
                     <Button as="a" href={ctaButtonUrl || "/"}>

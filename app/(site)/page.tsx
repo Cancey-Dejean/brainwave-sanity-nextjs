@@ -46,7 +46,12 @@ async function getData() {
         "mainImageAlt": mainImage.alt,
       },
       _type == "roadmap" => {
-          ...,
+        ...,
+        roadmapCards [] {
+        ...,
+        "mainImage": mainImage.asset->url,
+        "mainImageAlt": mainImage.alt,
+        }
       },
     }
   }`;
