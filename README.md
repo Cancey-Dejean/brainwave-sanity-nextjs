@@ -1,3 +1,6 @@
+## Storybook Link:
+https://65ebb6163f596479f5138e81-aqpzopkirq.chromatic.com/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

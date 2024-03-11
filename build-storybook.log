@@ -1,0 +1,49 @@
+
+> sanity-next-14-starter@0.1.0 build-storybook /Users/canceydejean/Dropbox/Code/React/Component Projects/brainwave-sanity-nextjs
+> storybook build "--output-dir" "/var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g"
+
+@storybook/cli v7.6.17
+
+info => Cleaning outputDir: /var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g
+info => Loading presets
+info => Building manager..
+info => Manager built (203 ms)
+info => Building preview..
+info => Copying static files: /Users/canceydejean/Dropbox/Code/React/Component Projects/brainwave-sanity-nextjs/node_modules/.pnpm/@storybook+manager@7.6.17/node_modules/@storybook/manager/static at /var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g/sb-common-assets
+WARN No story files found for the specified pattern: stories/**/*.mdx
+WARN No story files found for the specified pattern: stories/**/*.stories.@(js|jsx|mjs|ts|tsx)
+WARN You (or an addon) are using the 'config' preset field. This has been replaced by 'previewAnnotations' and will be removed in 8.0
+WARN No story files found for the specified pattern: components/**/*.mdx
+info Using Babel compiler
+info Addon-docs: using MDX2
+info => Using implicit CSS loaders
+info => Using default Webpack5 setup
+info => Copying static files: /Users/canceydejean/Dropbox/Code/React/Component Projects/brainwave-sanity-nextjs/public at /var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g/
+info => Copying static files: /Users/canceydejean/Dropbox/Code/React/Component Projects/brainwave-sanity-nextjs/public/images at /var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g/
+WARN Failed to parse /Users/canceydejean/Dropbox/Code/React/Component Projects/brainwave-sanity-nextjs/public/images/index.js with react-docgen. Rerun Storybook with --loglevel=debug to get more info.
+WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+WARN This can impact web performance.
+WARN Assets: 
+WARN   static/media/gradient.15bf030e.png (2.2 MiB)
+WARN   static/media/background.10b72129.jpg (1.16 MiB)
+WARN   static/media/robot.b13a644d.png (362 KiB)
+WARN   static/media/hero-background.57d7b1d9.jpg (918 KiB)
+WARN   static/media/service-1.3448276c.png (1.7 MiB)
+WARN   static/media/service-2.e14b2cdb.png (1.71 MiB)
+WARN   static/media/service-3.33af30a6.png (871 KiB)
+WARN   static/media/hero.75241d8a.png (416 KiB)
+WARN   static/media/image-2.4bea24a5.png (325 KiB)
+WARN   static/media/image-2.6119dda5.png (417 KiB)
+WARN   937.3c9f21c8.iframe.bundle.js (796 KiB)
+WARN   54.fca1e175.iframe.bundle.js (583 KiB)
+WARN   855.4afc99e1.iframe.bundle.js (956 KiB)
+WARN   27.80a41a19.iframe.bundle.js (726 KiB)
+WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+WARN Entrypoints:
+WARN   main (1.02 MiB)
+WARN       runtime~main.94046aa9.iframe.bundle.js
+WARN       855.4afc99e1.iframe.bundle.js
+WARN       main.317d097f.iframe.bundle.js
+WARN 
+info => Preview built (8.32 s)
+info => Output directory: /var/folders/bd/sqdzdw7j3n1cdpj7yymdtsy40000gn/T/chromatic--67015-ubKEclLXmv5g
